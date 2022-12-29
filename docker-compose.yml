@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  app:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: web-app
+    ports:
+      - 3000:3000
+    volumes:
+      - ./frontend:/usr/src/app
+    command: sh -c "cd myapp && npm run dev"
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    image: web-api
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./api:/api
