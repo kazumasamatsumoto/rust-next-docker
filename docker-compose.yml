@@ -27,5 +27,5 @@ services:
     ports:
       - 80:80
     volumes:
-      - ./frontend/myapp/out:/var/www
+      - ./frontend/myapp/.next:/var/www
       - ./docker/nginx/:/etc/nginx/conf.d
