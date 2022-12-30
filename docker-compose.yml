@@ -7,9 +7,10 @@ services:
     image: web-app
     ports:
       - 3000:3000
+    working_dir: /app/myapp
     volumes:
-      - ./frontend:/usr/src/app
-    command: sh -c "cd myapp && npm run dev"
+      - ./frontend:/app
+    command: sh -c "npm run dev"
   api:
     build:
       context: ./api
