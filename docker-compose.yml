@@ -20,3 +20,12 @@ services:
       - "8080:8080"
     volumes:
       - ./api:/api
+
+  nginx:
+    image: nginx
+    container_name: nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./frontend/myapp/out:/var/www
+      - ./docker/nginx/:/etc/nginx/conf.d
